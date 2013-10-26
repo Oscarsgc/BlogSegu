@@ -1,12 +1,26 @@
 BlogSegu::Application.routes.draw do
-  root to: "posts#index"
-  resources :users
-  #get "users/new"
-  
-  resources :posts do
-    resources :comments
+  get "static_pages/home"
+  get "static_pages/help"
+  get "static_pages/about"
+
+  root to: "static_pages#home"
+   #resources :users
+
+  resources :users do
+      member do
+        get :following, :followers
+      end
   end
+  
+  resources :sessions,      only: [:new, :create, :destroy]
+  resources :microposts,    only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
+
+  
   match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+    
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

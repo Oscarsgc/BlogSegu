@@ -1,0 +1,20 @@
+<%= render 'shared/error_messages' %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :career, "Carrera" %>
+<%= f.select :career, options_for_select([[" Ingenieria de Sistemas", "Sistemas"], ["Ingenieria de Telecomunicaciones", "Telecom"]])%>
+
+<%= f.label :birthday%>
+<%= f.date_select :birthday%>
+
+
+<%= f.label :email %>
+<%= f.text_field :email %>
+
+<%= f.label :password %>
+<%= f.password_field :password %>
+
+<%= f.label :password_confirmation, "Confirm Password" %>
+<%= f.password_field :password_confirmation %>
