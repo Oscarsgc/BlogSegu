@@ -1,11 +1,12 @@
 class RelationshipsController < ApplicationController
   before_action :signed_in_user
-
   respond_to :html, :js
 
   def create
     @user = User.find(params[:relationship][:followed_id])
     current_user.follow!(@user)
+    UserMailer.new_follower(current_user, @user).deliver
+
     respond_with @user
   end
 
