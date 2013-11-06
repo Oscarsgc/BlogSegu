@@ -158,11 +158,14 @@ aside {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+input, textarea,.uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: 200px;
   margin-bottom: 15px;
 }
+date_select, .uneditable-input{
+  width: 75px;
+} 
 
 input {
   height: auto !important;

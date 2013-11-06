@@ -34,6 +34,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.password=params['regpwd']
     if @user.save
       UserMailer.activate_acount(@user).deliver
       sign_in @user
