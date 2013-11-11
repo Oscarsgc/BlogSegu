@@ -2,8 +2,8 @@
 
 one:
   body: MyText
-  post_id: 
+  micropost_id: 
 
 two:
   body: MyText
-  post_id: 
+  micropost_id: 

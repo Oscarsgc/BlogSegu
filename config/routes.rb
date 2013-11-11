@@ -11,9 +11,18 @@ BlogSegu::Application.routes.draw do
         get :following, :followers
       end
   end
-  
+
+  resources :microposts do
+    resources :comments
+end
+
+resources :users do
+    resources :comments
+end
+
+  resources :comments
   resources :sessions,      only: [:new, :create, :destroy]
-  resources :microposts,    only: [:create, :destroy]
+  resources :microposts#,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
   

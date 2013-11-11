@@ -43,10 +43,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.7em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
   color: $grayLight;
 }
@@ -230,3 +228,37 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+
+/* Comments */
+
+.comments {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0 ;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+title {
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: $grayLight;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+

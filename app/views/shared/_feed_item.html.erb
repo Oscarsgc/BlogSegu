@@ -13,4 +13,24 @@
                                      data: { confirm: "Seguro?" },
                                      title: feed_item.content %>
   <% end %>
+  <%if( current_user!=nil)%>
+  <%= form_for([feed_item, feed_item.comments.build]) do |f| %>
+      <p>
+        <%= f.label :body, "Escriba su comentario aqui:" %>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.submit%>
+      </p>
+  <% end %>
+<h2>Comentarios</h2>
+<%for comment in feed_item.comments%>
+  <%if(comment.id!=nil)%>
+  <%=link_to gravatar_for(comment.user), comment.user%>
+        <%=link_to comment.user.name, comment.user%> dijo: <%=comment.body%>
+        <br><br><br><br>
+                <HR SIZE="2" COLOR="lightblue">
+  <%end%>
+<%end%>
+<% end %>
 </li>

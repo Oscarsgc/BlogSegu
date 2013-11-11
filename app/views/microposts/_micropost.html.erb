@@ -9,4 +9,24 @@
                                      data: { confirm: "You sure?" },
                                      title: micropost.content %>
   <% end %>
+  <%if( current_user!=nil)%>
+   <%= form_for([micropost, micropost.comments.build]) do |f| %>
+      <p>
+        <%= f.label :body, "Escriba su comentario aqui:" %>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.submit%>
+      </p>
+  <% end %>
+<h2>Comentarios</h2>
+<%for comment in micropost.comments%>
+  <%if(comment.id!=nil)%>
+  <%=link_to gravatar_for(comment.user), comment.user%>
+        <%=link_to comment.user.name, micropost.user%> dijo: <%=comment.body%>
+        <br><br><br><br>
+        <HR SIZE="2" COLOR="lightblue">
+  <%end%>
+<%end%>
+<%end %>
 </li>
