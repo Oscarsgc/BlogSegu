@@ -156,7 +156,7 @@ aside {
 
 /* forms */
 
-input, textarea,.uneditable-input {
+input, textarea, .uneditable-input {
   border: 1px solid #bbb;
   width: 200px;
   margin-bottom: 15px;
@@ -241,11 +241,8 @@ aside {
     border-top: 1px solid #e8e8e8;
   }
 }
-title {
-  padding: 10px 0;
-  border-top: 1px solid #e8e8e8;
-}
-.content {
+
+.body {
   display: block;
 }
 .timestamp {
