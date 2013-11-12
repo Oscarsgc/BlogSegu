@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
 	def new_follower(seguidor, seguido)
 		@usuarioSeguidor = seguidor
 		@usuarioSeguido = seguido
-		@url  = 'localhost:3000/users/'+@usuarioSeguidor.id.to_s
+		@url  = 'ltecnoblog/users/'+@usuarioSeguidor.id.to_s
 		mail(to: @usuarioSeguido.email, subject: 'Nuevo Seguidor!')
 	end
 
