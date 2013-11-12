@@ -12,7 +12,7 @@
       <%= f.select :career, options_for_select([[" Ingenieria de Sistemas", "Sistemas"], ["Ingenieria de Telecomunicaciones", "Telecom"]])%>
 
       <%= f.label :birthday%>
-      <%= f.date_select :birthday%>
+      <%= f.date_select :birthday, :start_year => 1970, :end_year=>2013 %>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
