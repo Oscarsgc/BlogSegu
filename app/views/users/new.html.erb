@@ -15,7 +15,7 @@
 		<%= f.select :career, options_for_select([[" Ingenieria de Sistemas", "Sistemas"], ["Ingenieria de Telecomunicaciones", "Telecom"]])%>
 
 		<%= f.label :birthday, "Fecha de Nacimiento:"%>
-		<%= f.date_select :birthday, {:use_month_names => ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']}, :start_year => 1970, :end_year=>2013 %>
+		<%= f.date_select :birthday, :start_year => 1970, :end_year=>2013 %>
 
 
 		<%= f.label :email, "E-mail:" %>
