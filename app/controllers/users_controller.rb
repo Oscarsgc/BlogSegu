@@ -57,6 +57,13 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  def cambiar
+    @user=User.find(params[:id])
+    @user.admin=true
+    flash[:success] = "Usuario cambiado a administrador"
+    redirect_to users_url
+  end
+
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted."
@@ -67,7 +74,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :career, :birthday)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :career, :birthday, :admin)
     end
 
     # Before filters
