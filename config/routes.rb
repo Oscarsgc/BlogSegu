@@ -26,6 +26,8 @@ end
   resources :microposts#,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
+  resources :users
+
   
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:index, :edit, :update, :destroy]
   before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:destroy, :cambiar]
   def index
    @users = User.paginate(page: params[:page])
   end 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
    def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "Perfil Actualizado"
       redirect_to @user
     else
       render 'edit'
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.activate_acount(@user).deliver
       sign_in @user
-      flash[:success] = "Welcome to the Blog!"
+      flash[:success] = "Bienvenido al Blog!"
       redirect_to @user
     else
       render 'new'
