@@ -8,5 +8,12 @@ namespace :db do
                          birthday: "14-12-1992",
                          career: "Ingenieria de Sistemas", 
                          admin: true)
+    admin2=User.create!(name: "Carlos Andres Jordan Zeballos",
+                         email: "andresjordanze@gmail.com",
+                         password: "Seguridad1234",
+                         password_confirmation: "Seguridad1234",
+                         birthday: "11-10-1992",
+                         career: "Ingenieria de Sistemas", 
+                         admin: true)
   end
 end

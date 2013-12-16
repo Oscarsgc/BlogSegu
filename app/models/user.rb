@@ -10,7 +10,10 @@ class User < ActiveRecord::Base
 	validates :career, presence: true
 	validates :birthday, presence: true 
 	has_secure_password
-	validates :password, length: { minimum: 6 }
+	
+
+  VALID_PASSWORD_REGEX ="^[A-Za-z]+\d+.*$"
+
 
   has_many :reverse_relationships, foreign_key: "followed_id",
                                    class_name:  "Relationship",

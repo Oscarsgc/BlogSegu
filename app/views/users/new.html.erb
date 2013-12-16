@@ -37,6 +37,15 @@
 		<%= f.label :password_confirmation, "Confirmar:" %>
 		<%= f.password_field :password_confirmation %><br><br>
 
+		<%= f.label :AQuestion, "Nombre del mejor amigo de la infancia" %>
+		<%=f.text_field :AQuestion %>
+
+		<%= f.label :BQuestion, "Nombre de la primera mascota" %>
+		<%= f.text_field :BQuestion%>
+
+		<%= f.label :Cquestion, "Marca del primer Auto" %>
+		<%= f.text_field :Cquestion%>
+		<br>
 
       <%= f.submit "Crear cuenta", class: "btn btn-large btn-primary" %>
     <% end %>
